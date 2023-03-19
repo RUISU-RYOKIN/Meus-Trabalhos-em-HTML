@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Formulário</title>
+    <script>
+      function exibirDados() {
+        var nome = document.getElementById("nome").value;
+        var sobrenome = document.getElementById("sobrenome").value;
+        var data_nascimento = document.getElementById("data_nascimento").value;
+
+        document.getElementById("dados").innerHTML = "<tr><td>Nome:</td><td>" + nome + "</td></tr>" +
+                                                      "<tr><td>Sobrenome:</td><td>" + sobrenome + "</td></tr>" +
+                                                      "<tr><td>Data de Nascimento:</td><td>" + data_nascimento + "</td></tr>";
+      }
+    </script>
+  </head>
+  <body>
+    <form onsubmit="exibirDados(); return false;">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome"><br>
+
+      <label for="sobrenome">Sobrenome:</label>
+      <input type="text" id="sobrenome" name="sobrenome"><br>
+
+      <label for="data_nascimento">Data de Nascimento:</label>
+      <input type="date" id="data_nascimento" name="data_nascimento"><br>
+
+      <button type="submit">Salvar</button>
+    </form>
+
+    <table>
+      <tbody id="dados"></tbody>
+    </table>
+  </body>
+</html>
